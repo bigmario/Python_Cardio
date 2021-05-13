@@ -3,13 +3,11 @@ import math
 import os
 
 def screen_clear():
-   # for mac and linux(here, os.name is 'posix')
    if os.name == 'posix':
       _ = os.system('clear')
    else:
-      # for windows platfrom
       _ = os.system('cls')
-   # print out some text
+
 
 def area_triangulo(base, altura):
     area_general = (base * altura) / 2
@@ -42,7 +40,7 @@ def main():
             
         area_triangulo(base, altura)
 
-        pregunta = input('Continuar? [Y/N]').lower()
+        pregunta = input('Continuar? [Y/N] ').lower()
         
         if pregunta == 'y':
             screen_clear()
