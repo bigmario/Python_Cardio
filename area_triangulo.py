@@ -1,0 +1,54 @@
+
+import math
+import os
+
+def screen_clear():
+   # for mac and linux(here, os.name is 'posix')
+   if os.name == 'posix':
+      _ = os.system('clear')
+   else:
+      # for windows platfrom
+      _ = os.system('cls')
+   # print out some text
+
+def area_triangulo(base, altura):
+    area_general = (base * altura) / 2
+
+    area_equilatero = (math.sqrt(3)/4) * (base ** 2)
+
+    lado_isosceles = math.sqrt(16*(area_general**2)+(base**4))/(2*base)
+    area_isosceles = base*math.sqrt((lado_isosceles**2)-((base**2)/4))/2 
+
+    if area_general == area_equilatero:
+        tipo = "Equilatero"
+    elif area_general == area_isosceles:
+        tipo = "Isosceles"
+    else:
+        tipo = "Escaleno"
+
+    return print(f"El Triangulo es de tipo {tipo}, y tiene un area de {area_general}")
+
+
+def main():
+    continuar = True
+    while continuar:
+        print("""
+        ┏━┓┏━┓┏━╸┏━┓   ╻ ╻   ╺┳╸╻┏━┓┏━┓┏━┓   ╺┳┓┏━╸   ╺┳╸┏━┓╻┏━┓┏┓╻┏━╸╻ ╻╻  ┏━┓┏━┓
+        ┣━┫┣┳┛┣╸ ┣━┫   ┗┳┛    ┃ ┃┣━┛┃ ┃┗━┓    ┃┃┣╸     ┃ ┣┳┛┃┣━┫┃┗┫┃╺┓┃ ┃┃  ┃ ┃┗━┓
+        ╹ ╹╹┗╸┗━╸╹ ╹    ╹     ╹ ╹╹  ┗━┛┗━┛   ╺┻┛┗━╸    ╹ ╹┗╸╹╹ ╹╹ ╹┗━┛┗━┛┗━╸┗━┛┗━┛
+        """)
+        base = float(input("Ingrese la base del triangulo: "))
+        altura = float(input("Ingrese la altura del triangulo: "))
+            
+        area_triangulo(base, altura)
+
+        pregunta = input('Continuar? [Y/N]').lower()
+        
+        if pregunta == 'y':
+            screen_clear()
+        else:
+            continuar = False              
+
+
+if __name__ == '__main__':
+    main()
