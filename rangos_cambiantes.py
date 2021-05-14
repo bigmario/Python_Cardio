@@ -8,7 +8,7 @@ def screen_clear():
       _ = os.system('cls')
 
 def rangos_cambiantes(superior, inferior, comparacion):
-    return comparacion if comparacion > inferior and comparacion < superior else 'Prueba otro numero de comparacion'
+    return comparacion if comparacion > inferior and comparacion < superior else 'Prueba otra comparacion'
 
 
 def main():
