@@ -21,7 +21,7 @@ def main():
         """)
         superior = float(input("Ingrese el limite superior: "))
         inferior = float(input("Ingrese el limite inferior: "))
-        comparacion = float(input("Ingrese el numero de comparacion"))
+        comparacion = float(input("Ingrese el numero de comparacion: "))
 
         print(rangos_cambiantes(superior, inferior, comparacion))
 
