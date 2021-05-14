@@ -11,9 +11,7 @@ def piedra_papel_tijera(input_P1, input_P2):
     # 1 = piedra
     # 2 = papel
     # 3 = tijera
-    if ((input_P1 == 1 and input_P2 == 1) or 
-        (input_P1 == 2 and input_P2 == 2) or 
-        (input_P1 == 3 and input_P2 == 3)):
+    if (input_P1 == input_P2):
         return print('Se ha producido un empate !!!')
     elif ((input_P1 == 1 and input_P2 == 3) or 
           (input_P1 == 2 and input_P2 == 1) or 
